@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>GraphQL Frontend Demo</title>
+    <style>
+        body { font-family: sans-serif; display: flex; gap: 30px; padding: 20px; }
+       .panel { border: 1px solid #ccc; padding: 15px; border-radius: 5px; width: 50%; }
+        h2 { margin-top: 0; }
+       .item { border-bottom: 1px solid #eee; padding: 8px 0; }
+        form input, form button { margin-bottom: 10px; width: 95%; padding: 8px; }
+    </style>
+</head>
+<body>
+    <div class="panel">
+        <h2>Danh sách sản phẩm</h2>
+        <div class="filters">
+            <label for="category-filter">Lọc theo danh mục:</label>
+            <select id="category-filter" onchange="handleFilterChange()">
+                <option value="all">Tất cả (Sắp xếp theo giá thấp đến cao)</option>
+            </select>
+        </div>
+        <hr>
+        <div id="product-list"></div>
+    </div>
+
+    <div class="panel">
+        <h2>Quản lý người dùng (CRUD)</h2>
+        <form id="user-form">
+            <input type="hidden" id="user-id">
+            <input type="text" id="fullname" placeholder="Họ và tên" required><br>
+            <input type="email" id="email" placeholder="Email" required><br>
+            <input type="password" id="password" placeholder="Mật khẩu" required><br>
+            <input type="tel" id="phone" placeholder="Số điện thoại"><br>
+            <button type="submit">Lưu người dùng</button>
+            <button type="button" onclick="resetForm()">Hủy</button>
+        </form>
+        <hr>
+        <h3>Danh sách người dùng</h3>
+        <div id="user-list"></div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
